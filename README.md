@@ -1,69 +1,64 @@
-# React + TypeScript + Vite
+# Form Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A dynamic form generator built with React, TypeScript, and Material-UI.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Create dynamic forms with text, checkbox fields
+- Form builder with drag-and-drop interface
+- Real-time validation using React Hook Form + Yup
+- Conditional logic for show/hide fields
+- Persistent storage with Zustand
+- Responsive Material-UI design
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 18 + TypeScript
+- Vite
+- Material-UI (MUI) v5
+- Zustand
+- React Hook Form + Yup
+- React Router DOM
+- Vitest + React Testing Library
 
-```js
-export default tseslint.config([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+## Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+```bash
+# Clone and install
+git clone <repository-url>
+cd communere-form
+npm install
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Usage
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+1. **Create Form**: Click "Create Form" → Add elements → Save
+2. **View Form**: Click "View" on any form card → Fill and submit
+3. **Edit Form**: Click "Edit" to modify existing forms
 
-export default tseslint.config([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+## Scripts
+
+```bash
+npm run dev      # Development server
+npm run build    # Production build
+npm run test     # Run tests
+npm run preview  # Preview build
+```
+
+## Project Structure
+
+```
+src/
+├── components/    # UI components (atoms/molecules/organisms)
+├── pages/         # Application pages
+├── hooks/         # Custom React hooks
+├── store/         # Zustand state management
+├── types/         # TypeScript type definitions
+├── utils/         # Utility functions
+├── constants/     # Application constants
+├── routes/        # Routing configuration
+└── providers/     # Context providers
 ```
