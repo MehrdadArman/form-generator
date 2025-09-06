@@ -13,14 +13,14 @@ export interface Element {
   isRequired: boolean;
   placeholder?: string;
   conditions?: Condition[];
+  choices?: Choice[];
 }
 
 export type ElementType = "text" | "checkbox";
 
 export interface Choice {
   id: string;
-  label: string;
-  value: string;
+  name: string;
 }
 
 export interface Condition {
@@ -40,6 +40,7 @@ export type ConditionOperator =
 
 export interface FormData {
   [elementId: string]: any;
+  conditions: Condition[];
 }
 
 export interface ValidationError {

@@ -20,6 +20,7 @@ import Card from "@/components/Card/Card";
 import Button from "@/components/Button/Button";
 import ElementCard from "@/pages/Homepage/components/ElementCard";
 import useFormBuilder from "../hooks/useFormBuilder";
+import ConditionManager from "./ConditionManager";
 
 const FormBuilder: React.FC = () => {
   const {
@@ -70,6 +71,12 @@ const FormBuilder: React.FC = () => {
             onDelete={() => handleDeleteElement(element.id)}
           />
         ))}
+        {/* Condition Manager Component */}
+        <ConditionManager
+          newElement={newElement}
+          handleEditElement={handleEditElement}
+          elements={elements}
+        />
 
         <Divider sx={{ my: 3 }} />
 

@@ -86,7 +86,7 @@ export const useFormStore = create<FormStore>()(
         },
 
         clearFormData: () => {
-          set({ formData: {} });
+          set({ formData: { conditions: [] } });
         },
 
         setCurrentForm: (form: Form | null) => {
@@ -101,7 +101,9 @@ export const useFormStore = create<FormStore>()(
 
         // Form state
         currentForm: createInitialForm(),
-        formData: {},
+        formData: {
+          conditions: [],
+        },
 
         // UI state
         uiState: {
