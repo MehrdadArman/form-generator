@@ -9,7 +9,7 @@ const FormRendererPage: React.FC = () => {
   const { currentForm } = useFormStore();
 
   const onSubmit = (data: FormData) => {
-    console.log(data);
+    alert(JSON.stringify(data, null, 2));
   };
 
   return (

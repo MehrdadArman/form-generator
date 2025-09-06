@@ -5,7 +5,7 @@ import { Box, Typography } from "@mui/material";
 import Card from "@/components/Card/Card";
 import Button from "@/components/Button/Button";
 import FormField from "./Formfield";
-import { type Form, type FormData } from "@/types";
+import { type Form, type FormData, type Element } from "@/types";
 import { ValidationService } from "@/utils/validation";
 import { ConditionalLogicService } from "@/utils/conditionalLogic";
 
@@ -38,7 +38,7 @@ const FormRenderer: React.FC<FormRendererProps> = ({ form, onSubmit }) => {
     setValue(elementId, value);
   };
 
-  const shouldShowElement = (element: any): boolean => {
+  const shouldShowElement = (element: Element): boolean => {
     return ConditionalLogicService.shouldShowElement(element, watchedValues);
   };
 

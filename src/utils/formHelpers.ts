@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import type { Form, Element } from "@types";
+import type { Form, Element, Condition } from "@types";
 
 export class FormHelperService {
   static generateId(): string {
@@ -19,13 +19,15 @@ export class FormHelperService {
   static createElement(
     type: string,
     label: string,
-    isRequired: boolean = false
+    isRequired: boolean = false,
+    conditions: Condition[] = []
   ): Element {
     return {
       id: this.generateId(),
       type: type as any,
       label,
       isRequired,
+      conditions,
     };
   }
 
